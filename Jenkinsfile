@@ -19,7 +19,7 @@ pipeline {
     }
     stage('Build') {
       steps {
-        withDockerRegistry([credentialsId: 'dockerlogin'], url: '') {
+        withDockerRegistry([credentialsId: 'dockerlogin', url: '']) {
           script {
             app = docker.build('aec2fasg')
           }
